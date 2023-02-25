@@ -4,7 +4,7 @@
       <p class="v-catalog-item_price">{{ product_data.price }}</p>
       <p class="v-catalog-item_about">{{ product_data.about }}</p>
       <img class="v-catalog-item_image" :src="require('../assets/' + product_data.image)" alt="pic">
-      <button class="v-catalog-item_btn" @click="sendDataToCatalog()">Add to Cart</button>
+      <button class="v-catalog-item_btn" @click="addToCart()">Add to Cart</button>
     </div>
   </template>
 
@@ -26,8 +26,8 @@ export default {
     }
   },
   methods: {
-    sendDataToCatalog () {
-      this.$emit('sendDataToCatalog', this.product_data.article)
+    addToCart () {
+      this.$emit('addToCart', this.product_data)
     }
   }
 }
