@@ -1,17 +1,30 @@
 <template>
   <h1>Cart</h1>
   <div class="v-cart">
+<div class="v-cart-wrap">
+    <router-link :to="{name: 'catalog'}">
+        <div class="v-cart-link-to-catalog">
+          <i class="medium material-icons">local_grocery_store</i> {{ CART.length }}
+      </div>
+      <button class="btn">Back to Catalog</button>
+      </router-link>
+
+<p v-if="CART.length===0">You haven't got any products...</p>
+</div>
+
+<div class="v-cart-wrap-items">
     <vCartItem
-     v-for="(item, index) in cart_data"
+     v-for="(item, index) in CART"
      :key="item.article"
      :cart_item_data="item"
      @deleteFromCart="deleteFromCart(index)"/>
   </div>
+</div>
 </template>
 
 <script>
 import vCartItem from './v-cart-item.vue'
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'v-cart',
@@ -37,15 +50,24 @@ export default {
     deleteFromCart (index) {
       this.DELETE_FROM_CART(index)
     }
+  },
+  computed: {
+    ...mapGetters(['CART'])
   }
 }
 </script>
 
 <style lang="scss" scoped>
- .v-cart{
+ .v-cart-wrap-items{
         display: flex;
         margin: 0 auto;
         flex-wrap: wrap;
         max-width: 1500px;
+    }
+    .v-cart-wrap{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
     }
 </style>

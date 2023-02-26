@@ -14,7 +14,7 @@
         </span>
 
       </div>
-      <button class="v-cart-item_btn" @click="deleteFromCart()">Delete</button>
+      <button class="btn" @click="deleteFromCart()">Delete</button>
       </div>
     </div>
   </template>
@@ -55,19 +55,5 @@ export default {
         margin: 0 auto;
         box-shadow: 0 0 8px grey;
         margin-top: 40px;
-    }
-    .v-cart-item_btn{
-        width: 200px;
-        height: 50px;
-        border-radius: 25px;
-        margin-top: 20px;
-        background: rgba(84, 84, 122, 0.733);
-        border: none;
-        color: white;
-        box-shadow: 0 0 4px grey;
-        cursor: pointer;
-    }
-    .v-catalog-item_btn:hover{
-        background: rgba(60, 60, 87, 0.733);
     }
   </style>

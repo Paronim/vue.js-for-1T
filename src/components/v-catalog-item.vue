@@ -4,7 +4,7 @@
       <p class="v-catalog-item_price">{{ product_data.price }}</p>
       <p class="v-catalog-item_about">{{ product_data.about }}</p>
       <img class="v-catalog-item_image" :src="require('../assets/' + product_data.image)" alt="pic">
-      <button class="v-catalog-item_btn" @click="addToCart()">Add to Cart</button>
+      <button class="v-catalog-item_btn btn" @click="addToCart()">Add to Cart</button>
     </div>
   </template>
 
@@ -44,19 +44,5 @@ export default {
         margin: 0 auto;
         box-shadow: 0 0 8px grey;
         margin-top: 40px;
-    }
-    .v-catalog-item_btn{
-        width: 200px;
-        height: 50px;
-        border-radius: 25px;
-        margin-top: 20px;
-        background: rgba(84, 84, 122, 0.733);
-        border: none;
-        color: white;
-        box-shadow: 0 0 4px grey;
-        cursor: pointer;
-    }
-    .v-catalog-item_btn:hover{
-        background: rgba(60, 60, 87, 0.733);
     }
   </style>
