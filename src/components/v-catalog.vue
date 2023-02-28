@@ -1,7 +1,7 @@
 <template>
     <h1>Catalog</h1>
     <div class="v-catalog">
-      <router-link :to="{name: 'cart', params:{cart_data: CART}}">
+      <router-link :to="{name: 'cart'}">
         <div class="v-catalog-link-to-cart">
           <i class="medium material-icons">local_grocery_store</i> {{ CART.length }}
       </div>
@@ -31,13 +31,14 @@ export default {
   methods: {
     ...mapActions(['GET_PRODUCTS_FROM_API', 'ADD_TO_CART']),
 
-    addToCart (data) {
-      this.ADD_TO_CART(data)
+    addToCart (product, valueQuantity) {
+      const payload = { product, valueQuantity }
+      this.ADD_TO_CART(payload)
     }
   },
   mounted () {
     this.GET_PRODUCTS_FROM_API().then((response) => {
-      if (response.data) {
+      if (response) {
         console.log('Данные пришли')
       }
     })

@@ -20,7 +20,9 @@
   </template>
 
 <script>
+
 export default {
+
   name: 'v-cart-item',
   props: {
     cart_item_data: {
@@ -33,7 +35,6 @@ export default {
   components: {},
   data () {
     return {
-
     }
   },
   methods: {

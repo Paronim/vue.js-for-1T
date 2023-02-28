@@ -29,12 +29,6 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'v-cart',
   props: {
-    cart_data: {
-      type: Array,
-      default () {
-        return []
-      }
-    }
   },
   components: {
     vCartItem
