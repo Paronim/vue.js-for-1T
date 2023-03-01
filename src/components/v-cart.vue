@@ -2,12 +2,14 @@
   <h1>Cart</h1>
   <div class="v-cart">
 <div class="v-cart-wrap">
-    <router-link :to="{name: 'catalog'}">
-        <div class="v-cart-link-to-catalog">
-          <i class="medium material-icons">local_grocery_store</i> {{ CART.length }}
-      </div>
-      <button class="btn">Back to Catalog</button>
+  <div class="v-cart-link-to-catalog">
+           <router-link class="router-link" :to="{name: 'catalog'}">
+      <button class="btn"><i class="medium material-icons">arrow_back</i> Back to Catalog</button>
       </router-link>
+          </div>
+<div class="icon-for-exit-from-cart">
+  <i class="medium material-icons ">local_grocery_store</i> {{ CART.length }}
+</div>
 
 <p v-if="CART.length===0">You haven't got any products...</p>
 </div>
@@ -63,5 +65,19 @@ export default {
       flex-direction: column;
       align-items: center;
       margin: 0 auto;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+    }
+    .router-link {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
+    .icon-for-exit-from-cart{
+      position: absolute;
+      top: 50px;
+      right: 50px;
     }
 </style>

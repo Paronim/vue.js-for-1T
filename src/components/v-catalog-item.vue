@@ -56,12 +56,12 @@ export default {
         margin-top: 40px;
     }
     .v-catalog-item_quantity{
-      height:36px;
+      height:37px;
       width: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid black;
+      border: 1px solid rgba(0, 0, 0, 0.315);
 
     }
     .v-catalog-item-wrapper-quantity{
