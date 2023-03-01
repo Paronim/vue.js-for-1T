@@ -19,7 +19,6 @@ export default createStore({
       state.products = products
     },
     SET_CART: (state, payload) => {
-      let check = false
       if (payload.valueQuantity === 0) {
         alert('Увеличьте кол-во товара')
       } else {
@@ -27,14 +26,10 @@ export default createStore({
         if (state.cart.length === 0) {
           state.cart.push(payload.product)
         } else {
-          for (let i = 0; i <= state.cart.length - 1; i++) {
-            if (payload.product.article === state.cart[i].article) {
-              state.cart[i].quantity += payload.product.quantity
-              check = true
-              break
-            }
-          }
-          if (!check) {
+          const res = state.cart.findIndex((e) => e.article === payload.product.article)
+          if (res !== -1) {
+            state.cart[res].quantity += payload.product.quantity
+          } else {
             state.cart.push(payload.product)
           }
         }
